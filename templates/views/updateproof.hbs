@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>update proof</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="../css/updatestyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body class="hm-gradient">
+
+    <main>
+
+        <!--MDB Cards-->
+        {{#each usercomplain}}
+        <div class="container justify-content-center">
+            <div class="text-center darken-grey-text mb-4">
+                <h1 class="font-bold mt-4 mb-3 h4">Update Complain Proof</h1>
+            </div>
+
+            <!--Card-->
+            <div class="card card-1" style="width: 50rem; margin: auto;">
+                <div class="card-header bg-white">
+                    <!-- <img src="https://mdbootstrap.com/img/Photos/Others/portrait.jpg" class="card-img-top" alt="Card image cap"> -->
+                    <div class="nikhil">
+                        <form action="/addproof" method="post" enctype="multipart/form-data">
+                            <input type="hidden" name="id" value="{{this._id}}">
+                            <input type="file" id="file-input" name="image" accept="image/png, image/jpeg" onchange="preview(event)">
+                            <label for="file-input">
+                                <i class="fa fa-upload"></i> Choose A Photo
+                            </label>
+                            <div id="images"></div>
+                            <button type="submit" class="btn btn-primary" id="main">Submit</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">Complain details</h4>
+                    <div class="row mt-4">
+                        <div class="col">
+                            <div class="row justify-content-between">
+                                <div class="col">
+                                    <p class="mb-1"><b>Complain id</b></p>
+                                    <p class="mb-1 font-weight-normal">{{this._id}}</p>
+                                </div>
+                                <div class="col">
+                                    <p class="mb-1"><b>First Name</b></p>
+                                    <p class="mb-1 font-weight-normal">{{this.firstname}}</p>
+                                </div>
+                                <div class="col">
+                                    <p class="mb-1"><b>Last Name</b></p>
+                                    <p class="mb-1 font-weight-normal">{{this.lastname}}</p>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row justify-content-between"
+                                style="background-color: rgb(227, 227, 228); padding: 20px 0px;">
+                                <div class="col">
+                                    <p class="mb-1"><b>Gender</b></p>
+                                    <p class="mb-1 font-weight-normal">{{this.gender}}</p>
+                                </div>
+                                <div class="col">
+                                    <p class="mb-1"><b>Date and Time</b></p>
+                                    <p class="mb-1 font-weight-normal">{{this.dateandtime}}</p>
+                                </div>
+                                <div class="col">
+                                    <p class="mb-1"><b>Email id</b></p>
+                                    <p class="mb-1 font-weight-normal">{{this.email}}</p>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row justify-content-between">
+                                <div class="col">
+                                    <p class="mb-1"><b>Number</b></p>
+                                    <p class="mb-1 font-weight-normal">{{this.number}}</p>
+                                </div>
+                                <div class="col">
+                                    <p class="mb-1"><b>Address</b></p>
+                                    <p class="mb-1 font-weight-normal">{{this.address}}</p>
+                                </div>
+                                <div class="col">
+                                    <p class="mb-1"><b>Area</b></p>
+                                    <p class="mb-1 font-weight-normal">{{this.area}}</p>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row justify-content-between"
+                                style="background-color: rgb(227, 227, 228); padding: 20px 0px;">
+                                <div class="col">
+                                    <p class="mb-1"><b>Complain Description</b></p>
+                                    <p class="mb-1 font-weight-normal">{{this.description}}</p>
+                                </div>
+                            </div>
+                            <br>
+                            {{!-- <div class="row justify-content-between">
+                                <div class="col">
+                                    <p class="mb-1"><b>Feedback</b></p>
+                                    <p class="mb-1 font-weight-normal">{{this.feedback}}</p>
+                                </div>
+                            </div> --}}
+                            <br>
+                            <div class="row justify-content-between">
+                                <div class="col">
+                                    <p class="mb-1"><b>Status</b></p>
+                                    <p class="mb-1 font-weight-bold" style="color: rgb(8, 172, 8);">{{this.status}}</p>
+                                </div>
+                            </div>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+        
+        {{#each usercomplain2}}
+        <div class="container justify-content-center">
+            <div class="text-center darken-grey-text mb-4">
+                <h1 class="font-bold mt-4 mb-3 h4">Update Complain Proof</h1>
+            </div>
+
+            <!--Card-->
+            <div class="card card-1" style="width: 50rem; margin: auto;">
+                <div class="card-header bg-white">
+                     <img src="img2/{{this.img}}" class="card-img-top" alt="Card image cap">
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">Complain details</h4>
+                    <div class="row mt-4">
+                        <div class="col">
+                            <div class="row justify-content-between">
+                                <div class="col">
+                                    <p class="mb-1"><b>Complain id</b></p>
+                                    <p class="mb-1 font-weight-normal">{{this._id}}</p>
+                                </div>
+                                <div class="col">
+                                    <p class="mb-1"><b>First Name</b></p>
+                                    <p class="mb-1 font-weight-normal">{{this.firstname}}</p>
+                                </div>
+                                <div class="col">
+                                    <p class="mb-1"><b>Last Name</b></p>
+                                    <p class="mb-1 font-weight-normal">{{this.lastname}}</p>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row justify-content-between"
+                                style="background-color: rgb(227, 227, 228); padding: 20px 0px;">
+                                <div class="col">
+                                    <p class="mb-1"><b>Gender</b></p>
+                                    <p class="mb-1 font-weight-normal">{{this.gender}}</p>
+                                </div>
+                                <div class="col">
+                                    <p class="mb-1"><b>Date and Time</b></p>
+                                    <p class="mb-1 font-weight-normal">{{this.dateandtime}}</p>
+                                </div>
+                                <div class="col">
+                                    <p class="mb-1"><b>Email id</b></p>
+                                    <p class="mb-1 font-weight-normal">{{this.email}}</p>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row justify-content-between">
+                                <div class="col">
+                                    <p class="mb-1"><b>Number</b></p>
+                                    <p class="mb-1 font-weight-normal">{{this.number}}</p>
+                                </div>
+                                <div class="col">
+                                    <p class="mb-1"><b>Address</b></p>
+                                    <p class="mb-1 font-weight-normal">{{this.address}}</p>
+                                </div>
+                                <div class="col">
+                                    <p class="mb-1"><b>Area</b></p>
+                                    <p class="mb-1 font-weight-normal">{{this.area}}</p>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row justify-content-between"
+                                style="background-color: rgb(227, 227, 228); padding: 20px 0px;">
+                                <div class="col">
+                                    <p class="mb-1"><b>Complain Description</b></p>
+                                    <p class="mb-1 font-weight-normal">{{this.description}}</p>
+                                </div>
+                            </div>
+                            <br>
+                            {{!-- <div class="row justify-content-between">
+                                <div class="col">
+                                    <p class="mb-1"><b>Feedback</b></p>
+                                    <p class="mb-1 font-weight-normal">{{this.feedback}}</p>
+                                </div>
+                            </div> --}}
+                            <br>
+                            <div class="row justify-content-between">
+                                <div class="col">
+                                    <p class="mb-1"><b>Status</b></p>
+                                    <p class="mb-1 font-weight-bold" style="color: rgb(8, 172, 8);">{{this.status}}</p>
+                                </div>
+                            </div>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+        <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.1/js/mdb.min.js"></script>
+
+    </main>
+    <script>
+        function preview(event) {
+            var image = URL.createObjectURL(event.target.files[0]);
+            var imagediv = document.getElementById('images');
+            var newimg = document.createElement('img');
+            imagediv.innerHTML = '';
+            newimg.src = image;
+            imagediv.appendChild(newimg);
+        }
+    </script>
+
+</body>
+
+</html>

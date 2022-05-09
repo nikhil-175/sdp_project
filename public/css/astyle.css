@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Source Serif 4', sans-serif;
+  }
+  .home{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/municipal.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+  img {
+    width: 100px;
+    height: 80px;
+    margin-left: 0px;
+    cursor: pointer;
+  }
+  .navbar-nav{
+    margin-left: 50px;
+  }
+  .navbar-nav li{
+    font-size: 18px;
+    font-weight: bolder;
+    font-family: 'Baloo Bhaijaan 2', cursive;
+  }
+  .nav-item{
+    margin: 20px;
+  }
+  #navb{
+    display: flex;
+    align-items: center;
+    top: 0px;
+  }
+  #navb::before{
+    content: "";
+    background-color: black;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.2;
+  }
+  .smit{
+    width: 770px;
+      margin-top: 104px;
+      margin-left: 386px;
+  }
+  .smit h1{
+    width: 366px;
+    color: #ffce3e !important;
+    font-weight: 900;
+  }
+  .smit p{
+    color: white;
+    margin-top: 23px;
+    font-family: 'Andada Pro', serif;
+    font-size: 18px;
+  }
+  #logout{
+    margin-right: 20px;
+  }
+  #general{
+    margin-top: 39px;
+  }
+  #main{
+    margin: 0px 7px;
+  }

@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500&family=Baloo+Bhai+2:wght@500&family=Baloo+Bhaijaan+2:wght@500&family=Baloo+Paaji+2:wght@500&family=Source+Serif+4&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="first.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+</head>
+
+<body>
+    <div id="loading"></div>
+    <div class="home">
+        <nav class="navbar navbar-expand-lg bg-transparent navbar-dark sticky-top">
+            <img src="img/logo.jpg" alt="">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navb" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="navb" class="navbar-collapse collapse hide">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#service1">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact us</a>
+                    </li>
+                </ul>
+
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <div class="left">
+                            <div class="dropdown">
+                                <button id="nikhil" class="btn btn-outline-info float-right" type="button"
+                                    id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false" id="nik1">
+                                    Login
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" id="trigger" href="#" data-target="#modal1"
+                                        data-toggle="modal">Admin Login</a>
+                                    <a class="dropdown-item" id="trigger" href="#" data-target="#modal2"
+                                        data-toggle="modal">User Login</a>
+                                    <a class="dropdown-item" id="trigger" href="#" data-target="#modal3"
+                                        data-toggle="modal">Officer Login</a>
+                                </div>
+                            </div>
+                    </li>
+                    <li class="nav-item">
+                        <button type="button" id="str" class="btn btn-outline-info" data-target="#modal4"
+                            data-toggle="modal">Register</button>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="modal" id="modal1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="text">
+                            Admin Login Form
+                        </div>
+                        <button type="button" id="closea" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="/adminlogin" method="post">
+                            {{#if messagea}}
+                            <div class="alert {{messageClass}}" id="alertdanger" role="alert">
+                            {{messagea}}
+                            <button type="button" id="closetwo" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            {{/if}}
+                            <div class="data">
+                                <label><i class="fa fa-envelope fa-1x" style="margin-right: 8px;"></i>Email</label>
+                                <input type="text" placeholder="Enter your email" name="email" required>
+                            </div>
+                            <div class=" data ">
+                                <label><i class="fa fa-lock fa-1x" style="margin-right: 8px;"></i>Password</label>
+                                <input type="password" placeholder="Enter Password" name="password" required>
+                            </div>
+                            <div class="forgot-pass ">
+                                <a href="# ">Forgot Password?</a>
+                            </div>
+                            <button id="admin" class="btn1" type="submit">LOGIN</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal" id="modal2">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="text">
+                            User Login Form
+                        </div>
+                        <button type="button" id="closeone" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="/userlogin" method="post">
+                            {{#if message}}
+                            <div class="alert {{messageClass}}" id="alertdanger" role="alert">
+                            {{message}}
+                            <button type="button" id="closetwo" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            {{/if}}
+                            <div class="data">
+                                <label><i class="fa fa-envelope fa-1x" style="margin-right: 8px;"></i>Email</label>
+                                <input type="text" placeholder="Enter your email" name="email" required>
+                            </div>
+                            <div class=" data ">
+                                <label><i class="fa fa-lock fa-1x" style="margin-right: 8px;"></i>Password</label>
+                                <input type="password" placeholder="Enter Password" name="password" required>
+                            </div>
+                            <div class="forgot-pass ">
+                                <a href="/forgotpass">Forgot Password?</a>
+                            </div>
+                            <button id="userlog" class="btn1" type="submit">LOGIN</button>
+                            <div class="signup-link ">
+                                Not a member? <a href="#" data-target="#modal4" data-toggle="modal" id="signup">Signup
+                                    now</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal" id="modal3">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="text">
+                            Officer Login Form
+                        </div>
+                        <button type="button" id="closeo" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="/officerlogin" method="post">
+                            {{#if messageo}}
+                            <div class="alert {{messageClass}}" id="alertdanger" role="alert">
+                            {{messageo}}
+                            <button type="button" id="closetwo" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            {{/if}}
+                            <div class="data">
+                                <label><i class="fa fa-envelope fa-1x" style="margin-right: 8px;"></i>Email</label>
+                                <input type="text" placeholder="Enter your Email" name="email" required>
+                            </div>
+                            <div class="data">
+                                <label><i class="fa fa-lock fa-1x" style="margin-right: 8px;"></i>Password</label>
+                                <input type="password" placeholder="Enter Password" name="password" required>
+                            </div>
+                            <div class="data">
+                                <label>Department</label>
+                                <input type="text" placeholder="Enter your Department" name="department" required>
+                            </div>
+                            <div class="data">
+                                <label>Area</label>
+                                <input type="text" placeholder="Enter Your Area" name="area" required>
+                            </div>
+                            <div class="forgot-pass ">
+                                <a href="#">Forgot Password?</a>
+                            </div>
+                            <button class="btn1" type="submit">LOGIN</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal" id="modal4">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="text">
+                            User Register Form
+                        </div>
+                        <button type="button" class="close" id="closer" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="/register" method="post" id="regform">
+                            {{#if messager}}
+                            <div class="alert {{messageClass}}" id="alertdanger" role="alert">
+                            {{messager}}
+                            <button type="button" id="closetwo" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            {{/if}}
+                            <div class="data">
+                                <label><i class="fa fa-user fa-1x" style="margin-right: 8px;"></i>Username</label>
+                                <input type="text" placeholder="Enter your username" name="username" required>
+                            </div>
+                            <div class="data">
+                                <label><i class="fa fa-envelope fa-1x" style="margin-right: 8px;"></i>Email</label>
+                                <input type="text" placeholder="Enter your Email" name="email" required>
+                            </div>
+                            <div class="data">
+                                <label><i class="fa fa-lock fa-1x" style="margin-right: 8px;"></i>Password</label>
+                                <input type="password" placeholder="Enter Password" name="password" required>
+                            </div>
+                            <div class="data">
+                                <label><i class="fa fa-lock fa-1x" style="margin-right: 8px;"></i>Confirm
+                                    Password</label>
+                                <input type="password" placeholder="Re-Enter Password" name="cpassword" required>
+                            </div>
+                            <button class="btn1" type="submit">Sign up</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="smit">
+            <h1>Save your Time, Register complain online </h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia dignissimos cumque, sint accusantium
+                quas asperiores voluptatibus dicta provident iure excepturi, alias corporis consequuntur voluptatem
+                quaerat suscipit possimus labore minus natus nihil! Debitis, iusto deleniti?</p>
+        </div>
+    </div>
+    <div class="pagination" id="service1">
+        <div class="container" id="raj">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-header">
+                        <h2>Explore our services</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="single-service">
+                        <div class="service-bg service-bg-1">
+                            <h2>Street light department</h2>
+                        </div>
+                        <div class="service-text">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum ipsam laborum inventore.
+                                Voluptates consequatur maxime porro quidem, totam placeat illo repellendus praesentium
+                                fuga esse doloremque!</p>
+
+                            <a href="#" class="btn-area">Read more<i class="fa fa-long-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="single-service">
+                        <div class="service-bg service-bg-2">
+                            <h2>Road department</h2>
+                        </div>
+                        <div class="service-text">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum ipsam laborum inventore.
+                                Voluptates consequatur maxime porro quidem, totam placeat illo repellendus praesentium
+                                fuga esse doloremque!</p>
+
+                            <a href="#" class="btn-area">Read more<i class="fa fa-long-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="single-service">
+                        <div class="service-bg service-bg-3">
+                            <h2>Garbage department</h2>
+                        </div>
+                        <div class="service-text">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum ipsam laborum inventore.
+                                Voluptates consequatur maxime porro quidem, totam placeat illo repellendus praesentium
+                                fuga esse doloremque!</p>
+
+                            <a href="#" class="btn-area">Read more<i class="fa fa-long-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section" id="about">
+        <div class="container">
+            <div class="content-section">
+                <div class="title">
+                    <h1>About Us</h1>
+                </div>
+                <div class="content">
+                    <h3>Lorem ipsum dolor sit amet, consectetur adipisicing</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat.</p>
+                    <div class="button">
+                        <a href="">Read More</a>
+                    </div>
+                </div>
+                <div class="social">
+                    <a href=""><i class="fa fa-facebook"></i></a>
+                    <a href=""><i class="fa fa-twitter"></i></a>
+                    <a href=""><i class="fa fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="image-section">
+                <img src="img/img one.jpg">
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid rounded" id="contact">
+        <div class="row px-5">
+            <div class="col-sm-6">
+                <div>
+                    <h3 class="text-white">Get a quote</h3>
+                    <p class="text-secondary">Fill up the form and our Team will get back to you within in 24 hours</p>
+                </div>
+                <div class="links" id="bordering"> <a href="#" class="btn rounded text-white p-3"><i
+                            class="fa fa-phone icon text-primary pr-3"></i>9773293625</a> <a href="#"
+                        class="btn rounded text-white p-3"><i
+                            class="fa fa-envelope icon text-primary pr-3"></i>nikhil6645@gmail.com</a> <a href="#"
+                        class="btn rounded text-white p-3"><i class="fa fa-map-marker icon text-primary pr-3"></i>A/2
+                        Harsiddhi society, Nadiad</a> </div>
+                <div class="pt-lg-4 d-flex flex-row justify-content-start">
+                    <div class="pad-icon"> <a class="fa fa-facebook text-white" href="#"></a> </div>
+                    <div class="pad-icon"> <a class="fa fa-twitter text-white" href="#"></a> </div>
+                    <div class="pad-icon"> <a class="fa fa-instagram text-white" href="#"></a> </div>
+                </div>
+            </div>
+            <div class="col-sm-6 pad">
+                <form class="rounded msg-form">
+                    <div class="form-group"> <label for="name" class="h6">Your Name</label>
+                        <div class="input-group border rounded">
+                            <div class="input-group-addon px-2 pt-1">
+                                <p class="fa fa-user-o text-primary"></p>
+                            </div> <input type="text" class="form-control border-0" placeholder="Enter your name">
+                        </div>
+                    </div>
+                    <div class="form-group"> <label for="name" class="h6">Email</label>
+                        <div class="input-group border rounded">
+                            <div class="input-group-addon px-2 pt-1"> <i class="fa fa-envelope text-primary"></i> </div>
+                            <input type="text" class="form-control border-0" placeholder="Enter your Email">
+                        </div>
+                    </div>
+                    <div class="form-group"> <label for="msg" class="h6">Message</label> <textarea name="message"
+                            id="msgus" cols="10" rows="5" class="form-control bg-light"
+                            placeholder="Message"></textarea> </div>
+                    <div class="form-group d-flex justify-content-end"> <input type="submit"
+                            class="btn btn-primary text-white" value="send message"> </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {{!-- <div class="text-center p-4">
+        © 2021 Copyright Municipal.com;
+    </div> --}}
+    <footer>
+        <div class="footer-content">
+            <h3>Municipal.com</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam ratione delectus neque quos quas
+                repudiandae fugit dolores, distinctio illo ullam!</p>
+            <ul class="socials">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright &copy;2022 Municipal. designed by <span>nikhil and smit</span></p>
+        </div>
+    </footer>
+    <script>
+        var preloader = document.getElementById("loading");
+        window.addEventListener('load', function () {
+            preloader.style.display = 'none';
+        });
+        $(document).ready(function(){
+            {{#if message}}
+            $('#modal2').show();
+            $('#closeone').click(function(){
+                $('#modal2').hide();
+            });
+            $('#closetwo').click(function(){
+                $('#alertdanger').hide();
+            });
+            {{/if}}
+            {{#if messager}}
+            $('#modal4').show();
+            $('#closer').click(function(){
+                $('#modal4').hide();
+            });
+            $('#closetwo').click(function(){
+                $('#alertdanger').hide();
+            });
+            {{/if}}
+            {{#if messagea}}
+            $('#modal1').show();
+            $('#closea').click(function(){
+                $('#modal1').hide();
+            });
+            $('#closetwo').click(function(){
+                $('#alertdanger').hide();
+            });
+            {{/if}}
+            {{#if messageo}}
+            $('#modal3').show();
+            $('#closeo').click(function(){
+                $('#modal3').hide();
+            });
+            $('#closetwo').click(function(){
+                $('#alertdanger').hide();
+            });
+            {{/if}}
+            {{#if success}}
+            $('#modal2').show();
+            $('#closeone').click(function(){
+                $('#modal2').hide();
+            });
+            {{/if}}
+        });
+    </script>
+</body>
+
+</html>

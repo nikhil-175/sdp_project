@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>View complain</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {{!--
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> --}}
+  {{!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> --}}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/viewcom.css">
+</head>
+
+<body>
+
+  <div class="container-fluid">
+    <h2 class="text-center" style="margin-top: 40px;">All Complains</h2>
+    <table class="table table-striped" style="margin-top: 30px;">
+      <thead>
+        <tr>
+          <th>Complain id</th>
+          <th>First name</th>
+          <th>Last name</th>
+          <th>gender</th>
+          <th>dateandtime</th>
+          <th>email</th>
+          <th>Number</th>
+          <th>Address</th>
+          <th>Area</th>
+          <th>department</th>
+          <th>description</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each pending}}
+        <tr>
+          <td>{{this._id}}</td>
+          <td>{{this.firstname}}</td>
+          <td>{{this.lastname}}</td>
+          <td>{{this.gender}}</td>
+          <td>{{this.dateandtime}}</td>
+          <td>{{this.email}}</td>
+          <td>{{this.number}}</td>
+          <td>{{this.address}}</td>
+          <td>{{this.area}}</td>
+          <td>{{this.department}}</td>
+          <td>{{this.description}}</td>
+          <td><button type="button" class="btn btn-danger">{{this.status}}</button></td>
+        </tr>
+        {{/each}}
+        {{#each onprogress}}
+        <tr>
+          <td>{{this._id}}</td>
+          <td>{{this.firstname}}</td>
+          <td>{{this.lastname}}</td>
+          <td>{{this.gender}}</td>
+          <td>{{this.dateandtime}}</td>
+          <td>{{this.email}}</td>
+          <td>{{this.number}}</td>
+          <td>{{this.address}}</td>
+          <td>{{this.area}}</td>
+          <td>{{this.department}}</td>
+          <td>{{this.description}}</td>
+          <td><button type="button" class="btn btn-info">{{this.status}}</button></td>
+        </tr>
+        {{/each}}
+        {{#each completed}}
+        <tr>
+          <td>{{this._id}}</td>
+          <td>{{this.firstname}}</td>
+          <td>{{this.lastname}}</td>
+          <td>{{this.gender}}</td>
+          <td>{{this.dateandtime}}</td>
+          <td>{{this.email}}</td>
+          <td>{{this.number}}</td>
+          <td>{{this.address}}</td>
+          <td>{{this.area}}</td>
+          <td>{{this.department}}</td>
+          <td>{{this.description}}</td>
+          <td><button type="button" class="btn btn-success">{{this.status}}</button></td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+
+</body>
+
+</html>
